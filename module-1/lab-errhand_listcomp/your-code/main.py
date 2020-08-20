@@ -86,14 +86,16 @@ list9=list('The quick brown fox jumped over the lazy dog')
 consonants=[i for i in list9 if i!="a" if i!="e" if i!="i" if i!="o" if i!="u"]
 print(consonants)
 
-"""
+
 #10. Find the folders you have in your madrid-oct-2018 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
 import os
+files=[i for i in os.listdir("/Users/Javi/Ironhack/datamad0820")]
+print(files)
 
-"""
+
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
@@ -250,7 +252,6 @@ results1.append(divisibles_9)
 results=[i for num in results1 for i in num]
 print(list(set(results)))
 
-
 """
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
@@ -259,4 +260,5 @@ print(list(set(results)))
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
 
+No lo he conseguido sacar
 """
