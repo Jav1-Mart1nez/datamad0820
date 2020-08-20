@@ -91,9 +91,9 @@ print(consonants)
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
-import library os
-"""
+import os
 
+"""
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
@@ -121,13 +121,14 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 floats = [float(i) for sub in list_of_lists for i in sub]
 print(floats)
 
-"""
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
-
 for i in ['a','b','c']:
-    print i**2
+    try:
+        print (i**2)
+    except Exception as e:
+        print (e)
 
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
@@ -137,44 +138,69 @@ for i in ['a','b','c']:
 x = 5
 y = 0
 
-z = x/y
-
-
+try:
+    z = x/y
+except Exception as e:
+    print (e)
+finally:
+    print ("All Done.")
 
 
 #16. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
 abc=[10,20,20]
-print(abc[3])
+
+try:
+    print(abc[3])
+except Exception as e:
+    print (e)
 
 
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
-
+def division (a,b):
+    return a/b
+try:
+    division (2,0)
+except Exception as e:
+    print (e)
+    print ("No puedes dividir entre 0")
+try:
+    division (2,"1")
+except Exception as e:
+    print (e)
+    print ("No puedes dividir por un string")
 
 
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
-f = open('testfile','r')
-f.write('Test write this')
-
-
+try:
+    f = open('testfile','r')
+    print(f.write('Test write this'))
+except Exception as e:
+    print (e)
+    print ("No existe el archivo indicado")
 
 
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
 
-fp = open('myfile.txt')
+try:
+    fp = open('myfile.txt')
     line = f.readline()
+except FileNotFoundError:  
+    print("no se encuentra el archivo")
+try:
     i = int(s.strip())
+except NameError:
+    print("s no ha sido definida")
 
 
-
-
+"""
 #20. The following function can only run on a Linux system. 
 # The assert in this function will throw an exception if you call it on an operating system other than Linux. 
 # Handle this exception using try and except blocks. 
