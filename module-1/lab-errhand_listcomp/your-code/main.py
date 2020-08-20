@@ -65,43 +65,50 @@ print(divisible_by_seven)
 # You can use the following test string but feel free to modify at your convenience
 
 teststring = 'Find all of the words in a string that are monosyllabic'
+non_vowels=[i for i in teststring if not i=="a" if not i=="e" if not i=="i" if not i=="o" if not i=="u"]
+print(non_vowels)
 
-
-"""
 
 #8. Find the capital letters (and not white space) in the sentence 'The Quick Brown Fox Jumped Over The Lazy Dog'. 
 # Use capital_letters as the name of the list.  
 # Remember to use list comprehensions and to print your results
 
-
+list8=list('The Quick Brown Fox Jumped Over The Lazy Dog')   
+capital_letters=[i for i in list8 if i.isupper() == True]
+print(capital_letters)
 
 
 #9. Find all the consonants in the sentence 'The quick brown fox jumped over the lazy dog'.
 # Use consonants as the name of the list.
 # Remember to use list comprehensions and to print your results.
 
+list9=list('The quick brown fox jumped over the lazy dog')   
+consonants=[i for i in list9 if i!="a" if i!="e" if i!="i" if i!="o" if i!="u"]
+print(consonants)
 
-
-
-
+"""
 #10. Find the folders you have in your madrid-oct-2018 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
-
+import library os
+"""
 
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
 
-
+import random
+random_lists=[[random.randint(0, 101) for i in range(10)],[random.randint(0, 101) for i in range(10)],[random.randint(0, 101) for i in range(10)],[random.randint(0, 101) for i in range(10)]]
+print (random_lists)
 
 
 #12. Flatten the following list of lists. Use flatten_list as the name of the output.
 # Remember to use list comprehensions and to print your results
 
 list_of_lists = [[1,2,3],[4,5,6],[7,8,9]]
-
+flatten_list=[i for sublist in list_of_lists for i in sublist]
+print (flatten_list)
 
 
 #13. Convert the numbers of the following nested list to floats. Use floats as the name of the list. 
@@ -111,8 +118,10 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 ['30', '20', '30', '50', '10', '30', '20', '20', '20'], ['100', '100'], ['100', '100', '100', '100', '100'], \
 ['100', '100', '100', '100']]
 
+floats = [float(i) for sub in list_of_lists for i in sub]
+print(floats)
 
-
+"""
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
