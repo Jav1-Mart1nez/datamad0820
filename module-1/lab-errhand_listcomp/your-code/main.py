@@ -215,7 +215,7 @@ try:
 except Exception as e:
     print (e)
 
-"""
+
 # Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
@@ -224,9 +224,16 @@ except Exception as e:
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
+while True:
+    try:
+        a=int(input("introduzca un número entero ="))
+        sqr=a**2
+        print(sqr)
+        break
+    except ValueError:
+        print("el dato introducido no es correcto")
 
 
-"""
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
 
