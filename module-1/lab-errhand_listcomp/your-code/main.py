@@ -200,17 +200,22 @@ except NameError:
     print("s no ha sido definida")
 
 
-"""
 #20. The following function can only run on a Linux system. 
 # The assert in this function will throw an exception if you call it on an operating system other than Linux. 
 # Handle this exception using try and except blocks. 
 # You will probably need to import sys 
 
+import sys
+
 def linux_interaction():
     assert ('linux' in sys.platform), "Function can only run on Linux systems."
+try:
+    linux_interaction()    
     print('Doing something.')
+except Exception as e:
+    print (e)
 
-
+"""
 # Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
@@ -221,13 +226,32 @@ def linux_interaction():
 
 
 
-
+"""
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
 
+results1=[]
+divisibles_2=[i for i in range(1001) if i%2==0]
+divisibles_3=[i for i in range(1001) if i%3==0]
+divisibles_4=[i for i in range(1001) if i%4==0]
+divisibles_5=[i for i in range(1001) if i%5==0]
+divisibles_6=[i for i in range(1001) if i%6==0]
+divisibles_7=[i for i in range(1001) if i%7==0]
+divisibles_8=[i for i in range(1001) if i%8==0]
+divisibles_9=[i for i in range(1001) if i%9==0]
+results1.append(divisibles_2)
+results1.append(divisibles_3)
+results1.append(divisibles_4)
+results1.append(divisibles_5)
+results1.append(divisibles_6)
+results1.append(divisibles_7)
+results1.append(divisibles_8)
+results1.append(divisibles_9)
+results=[i for num in results1 for i in num]
+print(list(set(results)))
 
 
-
+"""
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
