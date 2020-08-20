@@ -142,8 +142,8 @@ y = 0
 
 try:
     z = x/y
-except Exception as e:
-    print (e)
+except ZeroDivisionError:
+    print ("No puedes dividir entre 0")
 finally:
     print ("All Done.")
 
@@ -155,8 +155,8 @@ abc=[10,20,20]
 
 try:
     print(abc[3])
-except Exception as e:
-    print (e)
+except IndexError:
+    print ("Elemento fuera de rango en la lista")
 
 
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
@@ -166,15 +166,13 @@ except Exception as e:
 def division (a,b):
     return a/b
 try:
-    division (2,0)
-except Exception as e:
-    print (e)
-    print ("No puedes dividir entre 0")
-try:
-    division (2,"1")
-except Exception as e:
-    print (e)
-    print ("No puedes dividir por un string")
+    a=int(input("introduzca el numero a: "))
+    b=int(input("introduzca el numero b: "))
+    print (division (a,b))
+except ZeroDivisionError:
+    print ("No puedes dividir entre 0")   
+except ValueError:
+    print ("debes introducir un número entero")
 
 
 #18. Handle the exception thrown by the code below by using try and except blocks. 
@@ -257,7 +255,6 @@ print(list(set(results)))
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
 
 No lo he conseguido sacar
