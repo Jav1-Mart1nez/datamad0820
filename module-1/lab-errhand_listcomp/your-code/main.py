@@ -257,12 +257,20 @@ results1.append(divisibles_9)
 results=[i for num in results1 for i in num]
 print(list(set(results)))
 
-"""
+
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-Num_of_Sections = int(input("Enter Num of Sections: "))
+while True:
+    Total_Marks=0
+    Num_of_Sections=0
+    try:
+        Total_Marks = int(input("Enter Total Marks Scored: "))
+        if Total_Marks>0:
+            Num_of_Sections = int(input("Enter Num of Sections: "))
+            if Num_of_Sections>2:
+                break
+    except Exception as e:
+        print(e)
 
-No lo he conseguido sacar
-"""
