@@ -56,10 +56,33 @@ class Saxon (Soldier):
 
 
 class War:
+    import random
+
     def __init__ (self):
         self.vikingArmy = []
         self.saxonArmy = []
-    def addViking(self, Viking):
-        self.vikingArmy.append(Viking)
-        
+    def addViking(self, viking):
+        self.viking = viking
+        self.vikingArmy.append(self.viking)
+    def addSaxon(self, saxon):
+        self.saxon = saxon
+        self.saxonArmy.append(self.saxon)
+    def vikingAttack(self):
+        pass
+    def receiveDamage (self):
+        return (f"receiveDamage() of a Saxon with the {self.strength} of a Viking")
+    def saxonAttack(self):
+        self.viking
+    def receiveDamage(self):
+        return (f"receiveDamage() of a viking with the {self.strength} of a Saxon")
+    def showStatus(self):
+        while True:
+            if len(self.saxonArmy)==0:
+                return "Saxons have fought for their lives and survive another day..."
+            if len(self.vikingArmy)==0:
+                return "Vikings have won the war of the century!"
+            if len(self.saxonArmy)==1 and len(self.vikingArmy)==0:
+                return "Vikings and Saxons are still in the thick of battle."
+            break
+    
     pass
