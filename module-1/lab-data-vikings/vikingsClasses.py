@@ -1,4 +1,6 @@
 
+import random
+
 # Soldier
 
 
@@ -56,7 +58,6 @@ class Saxon (Soldier):
 
 
 class War:
-    import random
 
     def __init__ (self):
         self.vikingArmy = []
@@ -68,21 +69,25 @@ class War:
         self.saxon = saxon
         self.saxonArmy.append(self.saxon)
     def vikingAttack(self):
-        pass
-    def receiveDamage (self):
-        return (f"receiveDamage() of a Saxon with the {self.strength} of a Viking")
+        viking_rand = random.choice(self.vikingArmy)
+        saxon_rand = random.choice(self.saxonArmy)
+        viking_attack = saxon_rand.receiveDamage(viking_rand.strength)
+        if saxon_rand.health <= 0:
+            self.saxonArmy.remove(saxon_rand)
+        return viking_attack
     def saxonAttack(self):
-        self.viking
-    def receiveDamage(self):
-        return (f"receiveDamage() of a viking with the {self.strength} of a Saxon")
+        viking_rand = random.choice(self.vikingArmy)
+        saxon_rand = random.choice(self.saxonArmy)
+        saxon_attack = viking_rand.receiveDamage(saxon_rand.strength)
+        if viking_rand.health <= 0:
+            self.vikingArmy.remove(viking_rand)
+        return saxon_attack
     def showStatus(self):
-        while True:
-            if len(self.saxonArmy)==0:
-                return "Saxons have fought for their lives and survive another day..."
-            if len(self.vikingArmy)==0:
-                return "Vikings have won the war of the century!"
-            if len(self.saxonArmy)==1 and len(self.vikingArmy)==0:
-                return "Vikings and Saxons are still in the thick of battle."
-            break
+        if len(self.saxonArmy)==0:
+            return ("Vikings have won the war of the century!")
+        if len(self.vikingArmy)==0:
+            return ("Saxons have fought for their lives and survive another day...")
+        if len(self.saxonArmy)>=1 and len(self.vikingArmy)>=1:
+            return ("Vikings and Saxons are still in the thick of battle.")
     
     pass
