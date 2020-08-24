@@ -79,8 +79,7 @@ print(d_mean)
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
-f=[]
-f.append(np.empty(((2,3,5))))
+f=np.empty(d.shape)
 print (f)
 
 
