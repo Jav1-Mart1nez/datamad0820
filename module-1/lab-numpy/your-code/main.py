@@ -106,12 +106,7 @@ print(d_mean)
 f=np.empty(d.shape)
 print (f)
 
-
 """
-
-# NO HE CONSEGUIDO SACARLOS, POR MÁS PRUEBAS QUE HE HECHO SÓLO CONSIGO UN VALUE ERROR, DICIENDO QUE TENGO QUE USAR a.all() OR a.any()
-
-
 #16. Populate the values in f. For each value in d, if it's larger than d_min but smaller than d_mean, assign 25 to the corresponding value in f.
 If a value in d is larger than d_mean but smaller than d_max, assign 75 to the corresponding value in f.
 If a value equals to d_mean, assign 50 to the corresponding value in f.
@@ -120,8 +115,20 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
-
-
+for x, dim1 in enumerate(d):
+    for y, dim2 in enumerate(dim1):
+        for z, dim3 in enumerate(dim2):
+            if d_min < dim3 < d_mean:
+                f[x,y,z] = 25
+            elif d_mean < dim3 < d_max:
+                f[x,y,z] = 75
+            elif dim3 == d_mean:
+                f[x,y,z] = 50
+            elif dim3 == d_min:
+                f[x,y,z] = 0
+            elif dim3 == d_max:
+                f[x,y,z] = 100
+                print(f)
 
 
 """
