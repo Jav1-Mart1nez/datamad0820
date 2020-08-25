@@ -13,6 +13,10 @@ print (np.version.version)
 
 a=np.random.random(((2,3,5)))
 
+print("""Challenge:
+a=np.random.randint(0, 101, (2, 3, 5))
+a=np.random.rand(2, 3, 5)
+No encuentro más formas de generar random arrays""")
 
 #4. Print a.
 
