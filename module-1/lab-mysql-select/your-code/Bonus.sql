@@ -1,0 +1,7 @@
+SELECT au.au_id AS AUTHOR_ID, au.au_lname AS LAST_NAME, au.au_fname AS FIRST_NAME,
+round(sum((ti.advance*(tiau.royaltyper/100))) + ((ti.price*ti.ytd_sales*(ti.royalty/100)*(tiau.royaltyper/100))),2) AS PROFIT
+FROM publications.authors AS au
+LEFT JOIN publications.titleauthor AS tiau ON au.au_id = tiau.au_id
+LEFT JOIN publications.titles AS ti ON tiau.title_id = ti.title_id
+GROUP BY AUTHOR_ID, FIRST_NAME, LAST_NAME
+ORDER BY PROFIT DESC LIMIT 3;
